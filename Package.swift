@@ -25,7 +25,6 @@ let package = Package(
             ],
             cSettings: [
                 .headerSearchPath("KKLog/include"),
-                .unsafeFlags(["-ObjC"])
             ]
         )
     ]
