@@ -4,35 +4,21 @@
 import PackageDescription
 
 let package = Package(
-    name: "KOKTEYL-LOG-SDK",
+    name: "KKLog",
     platforms: [
         .iOS(.v11)
     ],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
-            name: "KOKTEYL-LOG-SDK",
+            name: "KKLog",
             targets: ["KKLog"]),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
-        .target(
-            name: "KOKTEYL-LOG-SDK",
-            dependencies: [
-                .target(name: "KKLog")
-            ],
-            publicHeadersPath: "include",
-            cSettings: [
-                .headerSearchPath("include"),
-            ]
-        ),
         .binaryTarget(name: "KKLog",
                       path: "KKLog/KKLog.xcframework"),
-        .testTarget(
-            name: "KOKTEYL-LOG-SDKTests",
-            dependencies: ["KOKTEYL-LOG-SDK"]),
-        
         
     ]
 )
