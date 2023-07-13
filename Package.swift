@@ -22,7 +22,10 @@ let package = Package(
             dependencies: [
                 .target(name: "KKLog")
             ],
-            publicHeadersPath: "include"
+            publicHeadersPath: "include",
+            cSettings: [
+                .headerSearchPath("include/KKLog.h"),
+            ]
         ),
         .binaryTarget(name: "KKLog",
                       path: "KKLog/KKLog.xcframework"),
