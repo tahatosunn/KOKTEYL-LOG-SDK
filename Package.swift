@@ -21,12 +21,14 @@ let package = Package(
             name: "KOKTEYL-LOG-SDK",
             dependencies: [
                 .target(name: "KKLog")
-            ]),
+            ],
+           publicHeadersPath: "include"
+        ),
         .testTarget(
             name: "KOKTEYL-LOG-SDKTests",
             dependencies: ["KOKTEYL-LOG-SDK"]),
         
-        .binaryTarget(name: "KKLog",
-                      path: "KKLog/KKLog.xcframework"),
+            .binaryTarget(name: "KKLog",
+                          path: "KKLog/KKLog.xcframework"),
     ]
 )
